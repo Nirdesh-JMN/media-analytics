@@ -70,7 +70,7 @@ async def fetch_session_data(conn, session_id: int):
 # ─────────────────────────────────────────────
 
 async def run(session_id: int):
-    conn = await asyncpg.connect(DATABASE_URL)
+    conn = await asyncpg.connect(DATABASE_URL, ssl="require")
 
     try:
         films = await fetch_session_data(conn, session_id)
