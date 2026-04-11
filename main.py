@@ -1,3 +1,4 @@
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 app.add_middleware(
@@ -7,7 +8,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-from fastapi import FastAPI
 import asyncpg
 import os
 from dotenv import load_dotenv
